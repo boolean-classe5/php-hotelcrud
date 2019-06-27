@@ -1,0 +1,18 @@
+header {
+  height: $header_height;
+  border-bottom: 1px solid #ccc;
+
+  img {
+    height: $header_height;
+    padding: 5px;
+  }
+
+  nav {
+    float: right;
+
+    a {
+      line-height: $header_height;
+      margin-left: 10px;
+    }
+  }
+}
