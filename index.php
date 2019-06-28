@@ -24,7 +24,7 @@ $result = $conn->query($sql);
         <div class="col-12">
           <h1 class="float-left">Tutte le stanze dell'hotel</h1>
           <div class="float-right">
-            <a class="btn btn-info" id="new_room_button">
+            <a href="create.php" class="btn btn-info" id="new_room_button">
               Inserisci una nuova stanza
             </a>
           </div>
@@ -52,17 +52,18 @@ $result = $conn->query($sql);
                       <td class="text-right"><?php echo $row['created_at'] ?></td>
                       <td class="text-right"><?php echo $row['updated_at'] ?></td>
                       <td class="text-center">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                          <a href="show.php?id=<?php echo $row['id'] ?>"
-                            type="button" class="btn btn-primary">
-                            Visualizza
-                          </a>
-                          <a href="edit.php?id=<?php echo $row['id'] ?>"
-                            type="button" class="btn btn-secondary">
-                            Modifica
-                          </a>
-                          <a href="delete.php?id=<?php echo $row['id'] ?>" type="button" class="btn btn-danger">Cancella</a>
-                        </div>
+                        <a href="show.php?id=<?php echo $row['id'] ?>"
+                          type="button" class="btn btn-primary">
+                          Visualizza
+                        </a>
+                        <a href="edit.php?id=<?php echo $row['id'] ?>"
+                          type="button" class="btn btn-secondary">
+                          Modifica
+                        </a>
+                        <form method="post" action="delete.php" class="form_cancellazione">
+                          <input type="hidden" value="<?php echo $row['id'] ?>" name="id">
+                          <input type="submit" value="Cancella" class="btn btn-danger">
+                        </form>
                       </td>
                     </tr>
                     <?php

@@ -10,8 +10,13 @@ if ($conn && $conn->connect_error) {
     exit();
 }
 
-$id_stanza = intval($_GET['id']);
-$sql = "DELETE FROM stanze WHERE id = ";
+if(empty($_POST)) {
+  echo "Si è verificato un errore.";
+  exit();
+}
+
+$id_stanza = intval($_POST['id']);
+$sql = "DELETE FROM stanze WHERE id = $id_stanza";
 $result = $conn->query($sql);
 
 ?>
