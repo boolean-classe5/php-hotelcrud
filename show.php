@@ -19,7 +19,7 @@ $result = $conn->query($sql);
 <?php
   include 'layout/head.php';
   include 'layout/navbar.php';
- ?>
+?>
 
  <div id="main" class="container">
    <div class="row">

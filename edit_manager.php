@@ -33,7 +33,12 @@ $result = $conn->query($sql);
 <div id="main" class="container">
   <div class="row">
     <div class="col-12">
-      <?php var_dump($result); ?>
+      <?php if($result) { ?>
+        <h1>Modifica effettuata con successo!</h1>
+      <?php } else { ?>
+        <h1>Si è verificato un errore. Riprova o contatta l'amministratore.</h1>
+      <?php } ?>
+      <a href="index.php" class="btn btn-primary">Torna alla home</a>
     </div>
   </div>
 </div>

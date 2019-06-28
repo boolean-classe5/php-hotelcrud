@@ -22,7 +22,12 @@ $result = $conn->query($sql);
     <div id="main" class="container">
       <div class="row">
         <div class="col-12">
-          <h1>Tutte le stanze dell'hotel</h1>
+          <h1 class="float-left">Tutte le stanze dell'hotel</h1>
+          <div class="float-right">
+            <a class="btn btn-info" id="new_room_button">
+              Inserisci una nuova stanza
+            </a>
+          </div>
           <table class="table">
             <thead>
               <tr>
@@ -56,7 +61,7 @@ $result = $conn->query($sql);
                             type="button" class="btn btn-secondary">
                             Modifica
                           </a>
-                          <a href="#" type="button" class="btn btn-danger">Cancella</a>
+                          <a href="delete.php?id=<?php echo $row['id'] ?>" type="button" class="btn btn-danger">Cancella</a>
                         </div>
                       </td>
                     </tr>
